@@ -17,10 +17,9 @@
         }
         function success(position)
         {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            document.getElementById('var_lati').value=latitude;
-            document.getElementById('var_long').value=longitude;
+            var latlong = position.coords.latitude + "," + position.coords.longitude;
+            console.log(latlong);
+            document.getElementById('loc_frame').src="https://maps.google.com/maps?q=" + latlong + "&output=embed";
         }
         function fail()
         {
@@ -35,7 +34,7 @@
         $lat = $_POST['lati'];
         $lon = $_POST['long'];
         ?>
-            <iframe width="100%" height="860" src="https://maps.google.com/maps?q=<?php echo $lat; ?>,<?php echo $lon; ?>&output=embed" ></iframe>
+            <iframe width="100%" height="860" src="" ></iframe>
         <?php
      }
     ?>
